@@ -1,3 +1,9 @@
+/*! 
+ * angular-loading-bar v0.8.0
+ * https://chieffancypants.github.io/angular-loading-bar
+ * Copyright (c) 2016 Wes Cruver
+ * License: MIT
+ */
 
 /* Make clicks pass-through */
 #loading-bar,
@@ -41,6 +47,10 @@
   border-top-right-radius: 1px;
 }
 
+#loading-bar.light .bar {
+  background-color: white;
+}
+
 /* Fancy blur effect */
 #loading-bar .peg {
   position: absolute;
@@ -58,6 +68,13 @@
   border-radius: 100%;
 }
 
+#loading-bar.light .peg {
+  -moz-box-shadow: white 6px 0 6px 6px;
+  -ms-box-shadow: white 6px 0 6px 6px;
+  -webkit-box-shadow: white 6px 0 6px 6px;
+  box-shadow: white 6px 0 6px 6px;
+}
+
 #loading-bar-spinner {
   display: block;
   position: fixed;
@@ -73,13 +90,18 @@
   border:  solid 2px transparent;
   border-top-color:  #29d;
   border-left-color: #29d;
-  border-radius: 10px;
+  border-radius: 50%;
 
   -webkit-animation: loading-bar-spinner 400ms linear infinite;
   -moz-animation:    loading-bar-spinner 400ms linear infinite;
   -ms-animation:     loading-bar-spinner 400ms linear infinite;
   -o-animation:      loading-bar-spinner 400ms linear infinite;
   animation:         loading-bar-spinner 400ms linear infinite;
+}
+
+#loading-bar-spinner.light .spinner-icon {
+  border-top-color:  white;
+  border-left-color: white;
 }
 
 @-webkit-keyframes loading-bar-spinner {
@@ -99,6 +121,6 @@
   100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
 }
 @keyframes loading-bar-spinner {
-  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
-  100% { transform: rotate(360deg); transform: rotate(360deg); }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

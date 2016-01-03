@@ -3,6 +3,7 @@ angular.module('LoadingBarExample', ['chieffancypants.loadingBar', 'ngAnimate'])
   .config(function(cfpLoadingBarProvider) {
     // true is the default, but I left this here as an example:
     cfpLoadingBarProvider.includeSpinner = true;
+    cfpLoadingBarProvider.lightTheme = true;
   })
 
   .controller('ExampleCtrl', function ($scope, $http, $timeout, cfpLoadingBar) {
